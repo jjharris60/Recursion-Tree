@@ -18,12 +18,12 @@ function draw() {
     // changes the angle origin
     resetMatrix()
     translate(width / 2, height);
-    branch(slider.value() + 300)
+    branch(slider.value() + 200)
 }
 
 function branch(len) { // length of branch to draw
     let maxAngle = slider.value();
-    strokeWeight(map(len, 20, 200, 1, 10));
+    strokeWeight(map(len, 10, 300, 1, 10));
     stroke(lerpColor(brown1, brown2, random(0.1, 0.75)));
     line(0, 0, 0, -len);
     translate(0, -len)
@@ -42,12 +42,14 @@ function branch(len) { // length of branch to draw
             for (let i = 55; i < 135; i++) {
                 let x = radius * cos(i);
                 let y = radius * sin(i);
-                vertex(x, y);
+                curveVertex(x - 10, y + 10);
+                curveVertex(x + 10, y - 10);
             }
             for (let i = 135; i > 55; i--) {
                 let x = radius * cos(i);
                 let y = radius * sin(-i);
-                vertex(x, y);
+                curveVertex(x - 10, y + 10);
+                curveVertex(x + 10, y - 10);
             }
             endShape(CLOSE);
         } else {
