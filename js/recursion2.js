@@ -24,7 +24,7 @@ function draw() {
 function branch(len) { // length of branch to draw
     let maxAngle = slider.value();
     strokeWeight(map(len, 10, 300, 1, 10));
-    stroke(lerpColor(brown1, brown2, random(0.1, 0.75)));
+    stroke(lerpColor(brown1, brown2, random(0.1, 0.9)));
     line(0, 0, 0, -len);
     translate(0, -len)
     if (len > 50) {
@@ -56,22 +56,27 @@ function branch(len) { // length of branch to draw
             //branch1
             push();
             rotate(random(-maxAngle, maxAngle));
-            branch(len * 0.8);
+            branch(len * 0.9);
             pop();
             //branch2
             push();
             rotate(random(-maxAngle, maxAngle));
-            branch(len * 0.67);
+            branch(len * 0.75);
             pop();
             //branch3
             push();
             rotate(random(-maxAngle, maxAngle));
-            branch(len * 0.5);
+            branch(len * 0.75);
             pop();
             //branch4
             push();
             rotate(random(-maxAngle, maxAngle));
-            branch(len * 0.2);
+            branch(len * 0.5);
+            pop();
+            //branch5
+            push();
+            rotate(random(-maxAngle, maxAngle));
+            branch(len * 0.25);
             pop();
         }
     }
