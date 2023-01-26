@@ -60,33 +60,33 @@ function branch(len) { // length of branch to draw
         } else {
             //branch1\
             push();
-            rotate(random(-maxAngle, maxAngle));
-            branch(len * 0.25);
+            rotate(maxAngle);
+            branch(len * 0.45);
             pop();
             //branch2
             push();
-            rotate(random(-maxAngle, maxAngle));
-            branch(len * 0.35);
+            rotate(-maxAngle);
+            branch(len * 0.15);
             pop();
             //branch3
             push();
-            rotate(random(-maxAngle, maxAngle));
-            branch(len * 0.45);
+            rotate(maxAngle);
+            branch(len * 0.65);
             pop();
             //branch4
             push();
             rotate(-maxAngle);
-            branch(len * 0.55);
+            branch(len * 0.30);
             pop();
             //branch5
             push();
             rotate(maxAngle);
-            branch(len * 0.55);
+            branch(len * 0.25);
             pop();
             //branch6
             push();
             rotate(-maxAngle);
-            branch(len * 0.75);
+            branch(len * 0.55);
             pop();
             //branch7
             push();
