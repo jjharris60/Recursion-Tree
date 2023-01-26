@@ -13,7 +13,7 @@ function setup() {
     green1 = color('#09b300');
     green2 = color('#1f7d1a');
     noLoop();
-    slider = createSlider(0, 100, 0);
+    slider = createSlider(0, 300, 0);
     slider.position(10, windowHeight - 40);
     slider.style("width", "200px");
     slider.input(draw);
@@ -23,11 +23,11 @@ function draw() {
     // changes the angle origin
     resetMatrix()
     translate(width / 2, height);
-    branch(slider.value() + 400);
+    branch(slider.value() + 100);
 }
 
 function branch(len) { // length of branch to draw
-    let maxAngle = 45;
+    let maxAngle = map(slider.value(), 0, 300, 20, 50)
     strokeWeight(map(len, 20, 400, 2, 20));
     stroke(lerpColor(purple1, purple2, random(0.1, 0.9)));
     line(0, 0, 0, -len);
@@ -61,37 +61,37 @@ function branch(len) { // length of branch to draw
             //branch1\
             push();
             rotate(random(-maxAngle, maxAngle));
-            branch(len * 0.95);
+            branch(len * 0.25);
             pop();
             //branch2
             push();
             rotate(random(-maxAngle, maxAngle));
-            branch(len * 0.85);
+            branch(len * 0.35);
             pop();
             //branch3
             push();
             rotate(random(-maxAngle, maxAngle));
-            branch(len * 0.75);
+            branch(len * 0.45);
             pop();
             //branch4
             push();
-            rotate(random(-maxAngle, maxAngle));
-            branch(len * 0.65);
+            rotate(-maxAngle);
+            branch(len * 0.55);
             pop();
             //branch5
             push();
-            rotate(random(-maxAngle, maxAngle));
+            rotate(maxAngle);
             branch(len * 0.55);
             pop();
             //branch6
             push();
-            rotate(random(-maxAngle, maxAngle));
-            branch(len * 0.45);
+            rotate(-maxAngle);
+            branch(len * 0.75);
             pop();
             //branch7
             push();
-            rotate(random(-maxAngle, maxAngle));
-            branch(len * 0.5);
+            rotate(maxAngle);
+            branch(len * 0.75);
             pop();
         }
     }
