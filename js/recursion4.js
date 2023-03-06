@@ -50,7 +50,7 @@ function branch(len) { // length of branch to draw
                 curveVertex(x - 10, y + 10);
                 curveVertex(x + 10, y - 10);
             }
-            for (let i = 10; i > 60; i--) {
+            for (let i = 10; i > 185; i--) {
                 let x = radius * cos(i);
                 let y = radius * sin(-i);
                 curveVertex(x - 5, y + 5);
